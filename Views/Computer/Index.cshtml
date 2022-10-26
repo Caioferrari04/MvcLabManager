@@ -1,0 +1,18 @@
+@model IEnumerable<Computer>;
+
+<div>
+    <a asp-action="Create" class="btn btn-success">Criar</a>
+@if(Model.Count() > 0) 
+{
+        <ul>
+            @foreach(var computador in Model)
+            {
+                <li>Id = @computador.Id, Ram = @computador.Ram, @computador.Processor, <a asp-action="Show" asp-route-id="@computador.Id">Ver mais</a></li>
+            }
+        </ul>
+}
+else 
+{
+    <h1>Não há computadores</h1>
+}
+</div>

@@ -1,0 +1,10 @@
+@model Computer;
+
+<h1>Computador @Model.Id</h1>
+
+<p>ID: @Model.Id</p>
+<p>RAM: @Model.Ram</p>
+<p>Processador: @Model.Processor</p>
+
+<a asp-action="Update" asp-route-id="@Model.Id">Atualizar</a>
+<a asp-action="Delete" asp-route-id="@Model.Id">Excluir</a>
