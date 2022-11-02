@@ -1,10 +1,11 @@
-@model Computer;
+@model Lab;
 
-<h1>Computador @Model.ID</h1>
+<h1>@Model.Name</h1>
 
 <p>ID: @Model.ID</p>
-<p>RAM: @Model.Ram</p>
-<p>Processador: @Model.Processor</p>
+<p>Nome: @Model.Name</p>
+<p>Bloco: @Model.Block</p>
+<p>Número: @Model.Number</p>
 
 <a asp-action="Update" asp-route-id="@Model.ID">Atualizar</a>
 <a asp-action="Delete" asp-route-id="@Model.ID">Excluir</a>

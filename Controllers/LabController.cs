@@ -3,56 +3,52 @@ using MvcLabManager.Models;
 
 namespace MvcLabManager.Controllers;
 
-public class ComputerController : Controller
+public class LabController : Controller
 {
     private readonly Context _context;
 
-    public ComputerController(Context context)
+    public LabController(Context context)
     {
         _context = context;
     }
 
-    public IActionResult Index() {
-        return View(_context.Computers);
-    } 
+    public IActionResult Index() => View(_context.Labs);
 
     public IActionResult Show(int id)
     {
-        Computer computer = _context.Computers.Find(id);
+        Lab lab = _context.Labs.Find(id);
 
-        if(computer == null)
-        {
+        if(lab is null)
             return NotFound();
-        }
 
-        return View(computer);
+        return View(lab);
     }
 
     [HttpGet]
     public IActionResult Create() => View();
 
     [HttpPost]
-    public IActionResult Create(Computer computer) 
+    public IActionResult Create(Lab lab) 
     {
-        _context.Computers.Add(computer);
+        _context.Labs.Add(lab);
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
     }
 
     [HttpGet]
-    public IActionResult Update(int id) => View(_context.Computers.First(f => f.ID == id));
+    public IActionResult Update(int id) => View(_context.Labs.First(f => f.ID == id));
 
     [HttpPost]
-    public IActionResult Update(Computer computer) 
+    public IActionResult Update(Lab lab) 
     {
-        _context.Computers.Update(computer);
+        _context.Labs.Update(lab);
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
     }
 
     public IActionResult Delete(int id) 
     {
-        _context.Computers.Remove(_context.Computers.First(f => f.ID == id));
+        _context.Labs.Remove(_context.Labs.First(f => f.ID == id));
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
     }

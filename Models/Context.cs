@@ -13,4 +13,6 @@ public class Context : DbContext
     // }
 
     public DbSet<Computer> Computers { get; set; }
+
+    public DbSet<Lab> Labs { get; set; }
 }

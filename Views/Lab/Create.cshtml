@@ -1,0 +1,17 @@
+@model Lab;
+
+<div>
+    <h1>Criar laboratorio</h1>
+    <form asp-action="Create">
+        <label asp-for="@Model.Name" class="form-label"></label>
+        <input class="form-control" asp-for="@Model.Name">
+
+        <label asp-for="@Model.Block" class="form-label"></label>
+        <input asp-for="@Model.Block" class="form-control">
+
+        <label asp-for="@Model.Number" class="form-label"></label>
+        <input asp-for="@Model.Number" class="form-control">
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>

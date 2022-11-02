@@ -7,7 +7,7 @@
         <ul>
             @foreach(var computador in Model)
             {
-                <li>Id = @computador.Id, Ram = @computador.Ram, @computador.Processor, <a asp-action="Show" asp-route-id="@computador.Id">Ver mais</a></li>
+                <li>Id = @computador.ID, Ram = @computador.Ram, @computador.Processor, <a asp-action="Show" asp-route-id="@computador.ID">Ver mais</a></li>
             }
         </ul>
 }
